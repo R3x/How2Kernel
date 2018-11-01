@@ -1,7 +1,7 @@
 ifneq (${KERNELRELEASE},)
 obj-m += hello-2.o
 else
-KERNEL_SOURCE :=/home/omen/Kernel/linux-4.18.16
+KERNEL_SOURCE :=/lib/modules/$(shell uname -r)/build
 PWD := $(shell pwd)
 
 default:
