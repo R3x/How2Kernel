@@ -1,0 +1,24 @@
+# TODO
+- Kernel Sources Compilation
+    - For Modules Only
+    - For Images
+- Add and check setup.sh with support for multiple architecture
+    - amd64
+    - i386
+    - aarch64
+- Add prebuilt kernel images for 
+    - amd64
+    - i386
+    - aarch64
+- Update Lab 1 - 3 README.md with the required reading links
+- Modify comments/code for all the modules - to make them unique
+- Lab 1 - 3
+    - Compilation scripts ( compile.sh for multiple architectures )
+    - Copy kernel modules to vm ( copy.sh )
+- Add Lab 4 - Exploiting Null pointer dereference 
+    - Setup a shell script to create the environment
+    - Add buggy modules
+    - Add exploit scripts
+    - Check exploits
+    - Run exploit with ksploit
+- Add some intro to ksploit-lib and its uses
