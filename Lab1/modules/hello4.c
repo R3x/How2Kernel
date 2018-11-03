@@ -1,10 +1,10 @@
 /*  
- *  hello-4.c - Demonstrates module documentation.
+ *  Demonstrates module documentation.
  */
 #include <linux/module.h>
 #include <linux/kernel.h>
 #include <linux/init.h>
-#define DRIVER_AUTHOR "Peter Jay Salzman <p@dirac.org>"
+#define DRIVER_AUTHOR "teambi0s <amritabi0s1@gmail.com>"
 #define DRIVER_DESC   "A sample driver"
 
 static int __init init_hello_4(void)
@@ -21,18 +21,12 @@ static void __exit cleanup_hello_4(void)
 module_init(init_hello_4);
 module_exit(cleanup_hello_4);
 
-/*  
- *  You can use strings, like this:
- */
-
 /* 
- * Get rid of taint message by declaring code as GPL. 
+ * To remove the "tainted module" message we licence
+ * the code as GPL. 
  */
 MODULE_LICENSE("GPL");
 
-/*
- * Or with defines, like this:
- */
 MODULE_AUTHOR(DRIVER_AUTHOR);	/* Who wrote this module? */
 MODULE_DESCRIPTION(DRIVER_DESC);	/* What does this module do */
 

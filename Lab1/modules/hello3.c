@@ -1,10 +1,13 @@
 /*  
- *  hello-3.c - Illustrating the __init, __initdata and __exit macros.
+ *  Illustrating the __init, __initdata and __exit macros.
  */
 #include <linux/module.h>	/* Needed by all modules */
 #include <linux/kernel.h>	/* Needed for KERN_ALERT */
 #include <linux/init.h>		/* Needed for the macros */
 
+/*
+ * Data gets initalized during the insertion process itself.
+ */
 static int hello3_data __initdata = 3;
 
 static int __init hello_3_init(void)
@@ -18,5 +21,9 @@ static void __exit hello_3_exit(void)
 	printk(KERN_INFO "Goodbye, world 3\n");
 }
 
+/*
+ * Macros defined in the kernel itself for
+ * calling functions during insertion and deletion
+ */
 module_init(hello_3_init);
 module_exit(hello_3_exit);

@@ -2,9 +2,9 @@
  
 Let's build some kernel modules. 
 This Lab will be dealing with only the hello world modules. 
-
-# Reading Material
  
+# Reading Material
+  
 - Intro to kernel module programming (slides) 
 
 # Instructions 
@@ -19,4 +19,8 @@ scp -P 5022 <modulename>.ko root@localhost:.
 - Remove the kernel modules with the `rmmod <modulename>` command
 - Have fun !!!!
 
+# Basic Commands
 
+- `insmod`
+- `rmmod`
+- `modinfo`
