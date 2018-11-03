@@ -8,8 +8,9 @@
 	-m 2048 \
 	-kernel ./Image \
 	--append "console=ttyAMA0" \
-	-redir tcp:5022::22
-	$1 $2
+        -net user,hostfwd=tcp::5022-:22 \
+        -net nic \
+        $1 $2
 
 
 
