@@ -37,30 +37,15 @@ procfile_read(struct file *file,
               char *buffer,
               size_t buffer_length, loff_t *offset)
 {
-        static int finished = 0;
-        /*
-         * We return 0 to indicate end of file, that we have
-         * no more information. Otherwise, processes will
-         * continue to read from us in an endless loop.
-         */
-        if ( finished ) {
-                printk(KERN_INFO "procfs_read: END\n");
-                finished = 0;
-                return 0;
-        }
-        finished = 1;
-        /*
-         * We use put_to_user to copy the string from the kernel's
-         * memory segment to the memory segment of the process
-         * that called us. get_from_user, BTW, is
-         * used for the reverse.
-         */
-        if ( copy_to_user(buffer, procfs_buffer, procfs_buffer_size) ) {
-                return -EFAULT;
-        }
-        printk(KERN_INFO "procfs_read: read %lu bytes\n", procfs_buffer_size);
-        return procfs_buffer_size;       /* Return the number of bytes "read" */
- 
+	static int flag = 0; 
+	if(flag) {
+	printk(KERN_INFO "read : END\n");
+		flag = 0;
+		return 0;
+	}
+	printk(KERN_INFO "read (/proc/%s) : called\n",PROCFS_NAME);
+	flag = 1;
+	return  sprintf(buffer, procfs_buffer);
 }
 /**
  * This function is called with the /proc file is written
