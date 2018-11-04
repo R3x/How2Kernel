@@ -16,17 +16,29 @@ This Repository aims at giving a basic idea about Kernel Exploitation.
 
  ## Labs
 
-### Lab 1 - Intro to Kernel and Kernel Modules
+|Lab No|Topic|Short Description|
+|:-:|:-:|:-:|
+|[Lab 1](Lab1/)|Hello world|Build and insert your 1st kernel module|
+|[Lab 2](Lab2/)|Playing with Devices|Have fun with device|
+|[Lab 3](Lab3/)|Proc filesytem fun|Build your way upto to a keylogger|
+|[Lab 4](Lab4/)|Baby Kernel|Find your first kernel primitives|
+|[Lab 5](Lab5/)|Null pointer game|Exploit the null pointer derference bug and look at mitigations|
 
-This lab aims to give an idea about the kenrel and the kenrel space to the user. 
-We will try building some basic kernel modules and see their impact with the kernel.
- 
 ## Takeaways
-
+ 
 ### Images
 
 There are a couple of precomplied images in the images folder which can be used with qemu.
 
 ### Qemu Scripts
-
+ 
 There are some example scripts made for debugging the kernel with qemu.
+
+## Contributors
+
+This repository is the work of 4 people from team [bi0s](https://bi0s.in)
+
+- Vishnu Dev T J (n1ght_f0x)
+- Akul Pillai (k4iz3n)
+- Mahesh Hari (*some random nick*)
+- Siddharth Muralee (R3x)
