@@ -4,8 +4,8 @@ usage()
 {
     echo "Usage   : $0 [ OPTIONS ]"
     echo "Options :  "
-    echo "     -l : Setup Local"
-    echo "     -v x86/arm : Setup Curresponding vertual images"
+    echo "     -l : Setup Localy "
+    echo "     -v x86/arm : Setup corresponding virtual images"
 }
 
 if [ $# -eq 0 ]
