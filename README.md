@@ -40,5 +40,5 @@ This repository is the work of 4 people from team [bi0s](https://bi0s.in)
 
 - Vishnu Dev T J (n1ght_f0x)
 - Akul Pillai (k4iz3n)
-- Mahesh Hari (*some random nick*)
+- Mahesh Hari (slashbash)
 - Siddharth Muralee (R3x)
