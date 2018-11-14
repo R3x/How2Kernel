@@ -19,7 +19,7 @@ Modules are loaded only when they are required by the kernel. The kernel achieve
 
 The aliases are found in /etc/modprobe.conf or /etc/modprobe.d 
 
-### Basic Commands
+## Basic Commands
 
 #### lsmod
 Lists all the modules currently loaded into the kernel. This data is fetched from /proc/modules
