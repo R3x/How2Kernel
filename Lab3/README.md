@@ -16,3 +16,6 @@ procfs3.c -  create a "file" in /proc, file can be written to and read from.
 procfs3.c -  create a "file" in /proc
 
 This program uses the seq_file library to manage the /proc file to reimplement the functionality of Module 2.
+
+#### References
+<https://www.kernel.org/doc/Documentation/filesystems/seq_file.txt>
