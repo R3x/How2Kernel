@@ -28,9 +28,8 @@ while getopts ":lv:" opt ;do
             fi
 
             # Install qemu for running the kernel Images
-            sudo apt update
             echo -e "\n---- Installing QEMU -----\n\n"
-            sudo apt-get install -y qemu qemu-user qemu-user-static
+            sudo apt update && sudo apt-get install -y qemu qemu-user qemu-user-static
 
             echo -e "\n---- Installing Kernel Sources -----\n\n"
             mkdir kernel_source
@@ -56,7 +55,20 @@ while getopts ":lv:" opt ;do
             fi
 
             if [ ${OPTARG} = "x86" ]; then
+                sudo apt-get install -y libssl-dev
+                echo -e "Downloading Virtual image\n"
+                cd ./images
+                wget -c http://www.akulpillai.com/how2kernel/x86_64.tar.gz
+                tar xvf x84_64.tar.gz
+                cd ../
+                
                 echo "Building for x86"
+                echo -e "\n---- Preparing Kernel for Module Compilation ----\n\n"
+                cd ./kernel_source/linux-4.18.16/
+                make x86_64_defconfig
+                make modules_prepare
+                cd ../../
+                
             fi
             ;;
         *)
