@@ -6,7 +6,7 @@ obj-m += hello4.o
 obj-m += hello5.o
 # Assignment module here
 else
-KERNEL_SOURCE := ../../kernel_source/linux-4.18.16/
+KERNEL_SOURCE := ../kernel_source/linux-4.18.16/
 PWD := $(shell pwd)
 default:
 	# Compile for the same architecture as the host machine
