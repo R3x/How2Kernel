@@ -17,5 +17,15 @@ procfs3.c -  create a "file" in /proc
 
 This program uses the seq_file library to manage the /proc file to reimplement the functionality of Module 2.
 
+### Assignment Module
+
+- Take a string as input from the user by implementing write for the procfs file.
+- Have an integer variable 'key' defined as 13
+- Perform a single key xor on the string with the given key and print the resulting hex encoded string by implementing read for the procfs file.
+- Add to Makefile and test.
+
+**Note**: You can either use the normal or seq_file implementation 
+
 #### References
 <https://www.kernel.org/doc/Documentation/filesystems/seq_file.txt>
+
