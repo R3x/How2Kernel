@@ -1,8 +1,7 @@
 /*  
- * Assignment module 
- * 
+ * Assignment module : Make changes to the assignment from lab1 using ioctl so that 
+ * we can change the xor key
  */
-
 
 #include <linux/module.h>	/* Needed by all modules */
 #include <linux/kernel.h>	/* Needed for KERN_ALERT */
@@ -10,25 +9,31 @@
 
 /* Include other required Header Files*/
 
+static struct file_operations fops_struct = {
 
-/* Prototypes for the functions you have to implement*/
+        /* Your Code here */
 
-int init_module(void);
-void cleanup_module(void);
-static int device_open(struct inode *, struct file *);
-static int device_release(struct inode *, struct file *);
-static ssize_t device_read(struct file *, char *, size_t, loff_t *);
-static ssize_t device_write(struct file *, const char *, size_t, loff_t *);
+};
+
+static ssize_t procfile_write(struct file *file,const char *buffer, size_t count, loff_t *offset)
+{
+        /* Your Code here */
+}
+
+static ssize_t procfile_read(struct file *file, char *buffer, size_t buffer_length, loff_t *offset)
+{
+        /* Your Code here */
+}
 
 static int __init assignment_init(void)
 {
-    /* Your Code here */
-  return 0;
+        /* Your Code here */
+        return 0;
 }
 
 static void __exit assignment_exit(void)
 {
-  /* Your Code here */
+        /* Your Code here */
 }
 
 module_init(assignment_init);
