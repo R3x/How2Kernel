@@ -6,7 +6,7 @@ This lab will be your first major step in learning to root a kernel.
 * the null dereference bug
 * debugging the kernel with gdb stub
 * redirecting code execution (PoC) 	
-* writing a shellcode to get root priveleges
+* writing a shellcode to get root privileges
 
 ### Mitigations
 
