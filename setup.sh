@@ -64,6 +64,9 @@ while getopts ":lv:" opt ;do
                 
                 echo "Building for x86"
                 echo -e "\n---- Preparing Kernel for Module Compilation ----\n\n"
+		sudo apt install bison
+		sudo apt install flex
+		sudo apt install libelf-dev
                 cd ./kernel_source/linux-4.18.16/
                 make x86_64_defconfig
                 make modules_prepare
