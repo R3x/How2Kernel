@@ -2,7 +2,7 @@ ifneq (${KERNELRELEASE},)
 obj-m += smash.o
 
 else
-KERNEL_SOURCE := ../kernel_source/linux-4.18.16/
+KERNEL_SOURCE := ../../kernel_source/linux-4.18.16/
 ccflags-y := -fno-stack-protector -fno-stack-protector-all
 PWD := $(shell pwd)
 default:
