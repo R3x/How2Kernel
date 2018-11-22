@@ -2,13 +2,13 @@
 This lab will be your first major step in learning to root a kernel.
 
 ### Topics covered
-* understanding security mitigations on the kernel.
-* the null dereference bug
-* debugging the kernel with gdb stub
-* redirecting code execution (PoC) 	
-* writing a shellcode to get root priveleges
+1. Security mitigations on the kernel.
+2. Null dereference bug
+3. Debugging the kernel with gdb stub
+4. Redirecting code execution (PoC) 	
+5. Writing a shellcode to get root privileges
 
-### Mitigations
+### 1. Mitigations
 
 #### mmap\_min\_addr
 Prevent the user from mapping address below a fixed value, thus exploiting null ptr dereferences becomes a hazzle. This value is set in /proc/sys/vm/mmap\_min\_addr. 
