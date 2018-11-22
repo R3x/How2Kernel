@@ -35,16 +35,16 @@ The module has a very obvious buffer overflow vulnerability in the implementatio
 static
 ssize_t procfile_write(struct file *file,const char *buffer, size_t count, loff_t *offset)
 {
-char localbuf[8];
-/* get buffer size */
-procfs_buffer_size = count;
-/* write data to the buffer */
-if ( copy_from_user(procfs_buffer, buffer, procfs_buffer_size) ) {
-return -EFAULT;
-}
-memcpy(localbuf,procfs_buffer,procfs_buffer_size);
-printk(KERN_INFO "copied to buffer : %s", localbuf);
-return procfs_buffer_size;
+	char localbuf[8];
+	/* get buffer size */
+	procfs_buffer_size = count;
+	/* write data to the buffer */
+	if ( copy_from_user(procfs_buffer, buffer, procfs_buffer_size) ) {
+		return -EFAULT;
+	}
+	memcpy(localbuf,procfs_buffer,procfs_buffer_size);
+	printk(KERN_INFO "copied to buffer : %s", localbuf);
+	return procfs_buffer_size;
 }
 ```
 There is no check before the `memcpy()` which copies contents from a user controlled buffer `procfs_buffer` of size 1024 bytes to `localbuf`. This results in a ridiculously big and easily exploitable buffer overflow.
