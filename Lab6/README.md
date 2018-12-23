@@ -110,3 +110,11 @@ The lines of our interest are :
 
 The `rip` value is the 'IJKLMNOP' part of our input. Thus we now know for sure that we can jump to an arbitrary address.
 We also have the exact offset to saved `rip` - 8. 
+
+### The Exploit
+
+The exploit script can be found here: [exploit.c](exploit/exploit.c)
+Now that we can point execution to where ever we want, we will obviously first do, `commit_creds(prepare_kernel_cred(0));` We will do this using hard-coded address for this lab.
+But unlike the exploit in Lab5, in the process of gaining the execution flow, we have completely destroyed the stack, this means that we can no longer rely on the kernel to successfully return execution to user mode and will have to do it ourselves.
+To do this successfully, we will have to restore the `trap frame` that is stored on the stack, the `iretq` instruction is used for doing this. 
+Returning from kernel mode to user mode and executing shell can be done as illustrated in [exploit.c](exploit/exploit.c).  Also note the `swapgs` instruction which is used for preserving kernel information for a specific logical processor core across context switches.
