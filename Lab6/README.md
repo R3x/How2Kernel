@@ -49,6 +49,8 @@ ssize_t procfile_write(struct file *file,const char *buffer, size_t count, loff_
 ```
 There is no check before the `memcpy()` which copies contents from a user controlled buffer `procfs_buffer` of size 1024 bytes to `localbuf`. This results in a ridiculously big and easily exploitable buffer overflow.
 
+For this vulnerability to exist CONFIG_STACKPROTECTOR should not be set in the .config file before doing `make modules_prepare`
+
 ### PoC
 
 To check if we can exploit this vulnerability we will try to jump to an arbitrary address before we do anything meaningful.
