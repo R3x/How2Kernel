@@ -24,6 +24,7 @@ procfile_read(struct file *file,
 {
 	static int flag = 0; 
 	char localbuf[16]; //token
+	int size = (size_t)procfs_buffer[0];
 	memset(localbuf, 0, 16);
 	if(flag) {
 		printk(KERN_INFO "read : END\n");
@@ -31,13 +32,15 @@ procfile_read(struct file *file,
 		return 0;
 	}
 	printk(KERN_INFO "read (/proc/%s) : called\n",PROCFS_NAME);
-	if(sizeof localbuf > 10) {
-		printk("nope");
+	if(size > 128) {
 		dump_stack();
+		printk(KERN_INFO "Error");
+		return 0;
 	}
-	memcpy(&localbuf, procfs_buffer, sizeof localbuf);
+	memcpy(&localbuf, procfs_buffer+1, sizeof localbuf);
 	flag = 1;
-	return sprintf(buffer,localbuf);
+	memcpy(buffer,localbuf,size);
+	return size;
 }
 
 static
