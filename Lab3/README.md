@@ -6,11 +6,11 @@ The method to use the proc file system is very similar to the one used with devi
 
 ### Module 1
 
-procfs3.c -  create a "file" in /proc, file when read prints HelloWorld!
+procfs1.c -  create a "file" in /proc, file when read prints HelloWorld!
 
 ### Module 2
 
-procfs3.c -  create a "file" in /proc, file can be written to and read from.
+procfs2.c -  create a "file" in /proc, file can be written to and read from.
 
 ### Module 3
 procfs3.c -  create a "file" in /proc
