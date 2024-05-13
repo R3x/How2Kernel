@@ -59,7 +59,7 @@ while getopts ":lv:" opt ;do
                 echo -e "Downloading Virtual image\n"
                 cd ./images
                 wget -c http://www.akulpillai.com/how2kernel/x86_64.tar.gz
-                tar xvf x84_64.tar.gz
+                tar xvf x86_64.tar.gz
                 cd ../
                 
                 echo "Building for x86"
